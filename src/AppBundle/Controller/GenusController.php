@@ -14,6 +14,12 @@ class GenusController extends Controller
      */
     public function indexAction(Request $request, $a)
     {
-        return new Response('under the sea' . $a);
+        $templating = $this->container->get('templating');
+
+        $html = $templating->render('genus/show.html.twig', [
+            'name' => $a,
+        ]);
+
+        return new Response($html);
     }
 }
