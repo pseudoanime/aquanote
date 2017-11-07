@@ -13,8 +13,11 @@ class GenusController extends Controller
      */
     public function indexAction(Request $request, $a)
     {
+        $notes = ['123', '456', '789'];
+
         return $this->render('genus/show.html.twig', [
-            'name' => $a,
+            'name'  => $a,
+            'notes' => $notes,
         ]);
     }
 }
